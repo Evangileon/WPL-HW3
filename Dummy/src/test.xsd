@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="nameType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="^[A-Z]"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="dateOfBirth">
+        <xsd:restriction base="xsd:date">
+            <xsd:minInclusive value="1970-01-01"/>
+            <xsd:maxInclusive value="2000-12-31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="educationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="BA"/>
+            <xsd:enumeration value="BS"/>
+            <xsd:enumeration value="MS"/>
+            <xsd:enumeration value="PHD"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="addressType">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="streetName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[1-9]+\\s[A-Za-z]+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+
+            <xsd:element minOccurs="0" maxOccurs="1" name="aptNumber">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:integer">
+                        <xsd:minExclusive value="100"/>
+                        <xsd:maxInclusive value="2000"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="city">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="^[A-Z]"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="zipCode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:integer"/>
+                </xsd:simpleType>
+            </xsd:element>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="country">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="^[A-Z]+$"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="numberOfPreviousBooksType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxExclusive value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <xsd:complexType name="authorInformationType">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="authorName">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="firstName" type="nameType"/>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="lastName" type="nameType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="authorDateOfBirth" type="dateOfBirth"/>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="authorHighestEducation" type="educationType"/>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="authorAddress" type="addressType"/>
+
+            <xsd:element minOccurs="1" maxOccurs="1" name="authorPreviousBooks" type="numberOfPreviousBooksType"/>
+
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="coAuthorName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+</xsd:schema>

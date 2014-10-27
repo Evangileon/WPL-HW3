@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <author_information>
+        <lastname>Yu</lastname>
+        <firstname>Jun</firstname>
+        <date_of_birth>1989-08-10</date_of_birth>
+        <highest_education>MS</highest_education>
+        <address>
+            <street_name>814 Kingswood Ave</street_name>
+            <apt_number></apt_number>
+            <city>Richardson</city>
+            <zip>75080</zip>
+            <country>US</country>
+        </address>
+        <number_of_previous_books>2</number_of_previous_books>
+        <co_author_names></co_author_names>
+    </author_information>
+    <book_information>
+        <title>Hamlet</title>
+        <isbn>123-456-7890</isbn>
+        <price>100.00</price>
+        <publication_date>1989/08/10</publication_date>
+        <publisher_information>
+            <publisher_name>Barnes and Noble</publisher_name>
+            <suite_number></suite_number>
+            <city>New York</city>
+            <zip>12345</zip>
+            <country>US</country>
+        </publisher_information>
+        <total_time_in_circulation>1990/10/01-2014/08/10</total_time_in_circulation>
+    </book_information>
+</book>
