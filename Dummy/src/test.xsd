@@ -4,7 +4,7 @@
 
     <xsd:simpleType name="nameType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="^[A-Z]"/>
+            <xsd:pattern value="^[A-Z][A-Za-z]*"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -29,7 +29,7 @@
             <xsd:element minOccurs="1" maxOccurs="1" name="streetName">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string">
-                        <xsd:pattern value="[1-9]+\\s[A-Za-z]+"/>
+                        <xsd:pattern value="[1-9]+\s[A-Za-z\s]+"/>
                     </xsd:restriction>
                 </xsd:simpleType>
             </xsd:element>
@@ -46,7 +46,7 @@
             <xsd:element minOccurs="1" maxOccurs="1" name="city">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string">
-                        <xsd:pattern value="^[A-Z]"/>
+                        <xsd:pattern value="^[A-Z][A-Za-z]*"/>
                     </xsd:restriction>
                 </xsd:simpleType>
             </xsd:element>
@@ -100,7 +100,7 @@
 
     <xsd:simpleType name="titleType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="([A-Z][A-Za-z0-9]*\s*){1,}"/>
+            <xsd:pattern value="([A-Z][A-Za-z0-9]*\s*)+"/>
         </xsd:restriction>
     </xsd:simpleType>
 
