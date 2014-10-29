@@ -98,5 +98,11 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:simpleType name="titleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([A-Z][A-Za-z0-9]*\s*){1,}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
 
 </xsd:schema>
