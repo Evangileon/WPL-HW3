@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <author_information>
-        <lastname>Yu</lastname>
-        <firstname>Jun</firstname>
-        <date_of_birth>1989-08-10</date_of_birth>
-        <highest_education>MS</highest_education>
-        <address>
-            <street_name>814 Kingswood Ave</street_name>
-            <apt_number></apt_number>
-            <city>Richardson</city>
-            <zip>75080</zip>
-            <country>US</country>
-        </address>
-        <number_of_previous_books>2</number_of_previous_books>
-        <co_author_names></co_author_names>
-    </author_information>
-    <book_information>
-        <title>Hamlet</title>
-        <isbn>123-456-7890</isbn>
-        <price>100.00</price>
-        <publication_date>1989/08/10</publication_date>
-        <publisher_information>
-            <publisher_name>Barnes and Noble</publisher_name>
-            <suite_number></suite_number>
-            <city>New York</city>
-            <zip>12345</zip>
-            <country>US</country>
-        </publisher_information>
-        <total_time_in_circulation>1990/10/01-2014/08/10</total_time_in_circulation>
-    </book_information>
-</book>
+<Book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="test.xsd">
+    <AuthorInformation>
+        <AuthorName>
+            <LastName>Yu</LastName>
+            <FirstName>Jun</FirstName>
+        </AuthorName>
+        <AuthorDateOfBirth>1989-08-10</AuthorDateOfBirth>
+        <AuthorHighestEducation>MS</AuthorHighestEducation>
+        <AuthorAddress>
+            <StreetName>814 Kingswood Ave</StreetName>
+            <City>Richardson</City>
+            <ZipCode>75080</ZipCode>
+            <Country>US</Country>
+        </AuthorAddress>
+        <NumberAuthorPreviousBooks>2</NumberAuthorPreviousBooks>
+        <CoAuthorName>KKK</CoAuthorName>
+    </AuthorInformation>
+
+    <BookInformation>
+        <Title>Hamlet</Title>
+        <ISBN>123-456-7890</ISBN>
+        <Price>100.00</Price>
+        <PublicationDate>1989-08-10</PublicationDate>
+        <PublisherInformation>
+            <PublisherName>Barnes And Noble</PublisherName>
+            <PublisherAdress>
+                <StreetName>123 Kingswood</StreetName>
+                <SuiteNumber>123</SuiteNumber>
+                <City>NewYork</City>
+                <ZipCode>12345</ZipCode>
+                <Country>US</Country>
+            </PublisherAdress>
+        </PublisherInformation>
+        <TotalTimeInCirculation>P10Y11M12D</TotalTimeInCirculation>
+    </BookInformation>
+</Book>
