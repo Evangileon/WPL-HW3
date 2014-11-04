@@ -26,13 +26,13 @@
 
     <xsd:simpleType name="streetNameType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[1-9]+\s[A-Za-z\s]+"/>
+            <xsd:pattern value="[0-9]+\s[A-Za-z0-9\s]+"/>
         </xsd:restriction>
     </xsd:simpleType>
-    
+
     <xsd:simpleType name="cityType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[A-Z][A-Za-z]*"/>
+            <xsd:pattern value="([A-Z][A-Za-z]*\s?)+"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -100,7 +100,7 @@
 
     <xsd:simpleType name="titleType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="([A-Z][A-Za-z0-9]*\s*)+"/>
+            <xsd:pattern value="([A-Z][A-Za-z0-9]*[:\-]?\s*)+"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -116,20 +116,20 @@
                 <xsd:attribute name="currency">
                     <xsd:simpleType>
                         <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="pound" />
-                            <xsd:enumeration value="euro" />
-                            <xsd:enumeration value="dollar" />
+                            <xsd:enumeration value="pound"/>
+                            <xsd:enumeration value="euro"/>
+                            <xsd:enumeration value="dollar"/>
                         </xsd:restriction>
                     </xsd:simpleType>
                 </xsd:attribute>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    
+
     <xsd:complexType name="publisherInformationType">
         <xsd:sequence>
             <xsd:element name="PublisherName" type="titleType" minOccurs="1" maxOccurs="1"/>
-            <xsd:element name="PublisherAdress" minOccurs="1" maxOccurs="1">
+            <xsd:element name="PublisherAddress" minOccurs="1" maxOccurs="1">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="StreetName" type="streetNameType" minOccurs="1" maxOccurs="1"/>
@@ -143,6 +143,12 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:simpleType name="myDuration">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d\d? \d\d? \d\d?"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
     <xsd:complexType name="bookInformationType">
         <xsd:sequence>
             <xsd:element name="Title" type="titleType" minOccurs="1" maxOccurs="1"/>
@@ -150,17 +156,22 @@
             <xsd:element name="Price" type="priceType" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="PublicationDate" type="xsd:date" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="PublisherInformation" type="publisherInformationType" minOccurs="1" maxOccurs="1"/>
-            <xsd:element name="TotalTimeInCirculation" type="xsd:duration"/>
+            <xsd:element name="TotalTimeInCirculation" type="myDuration"/>
         </xsd:sequence>
     </xsd:complexType>
-    
-    <xsd:element name="Book">
+
+    <xsd:complexType name="bookType">
+        <xsd:sequence>
+            <xsd:element name="AuthorInformation" type="authorInformationType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="BookInformation" type="bookInformationType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="Books">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="AuthorInformation" type="authorInformationType" minOccurs="1" maxOccurs="1"/>
-                <xsd:element name="BookInformation" type="bookInformationType" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="Book" type="bookType" minOccurs="1" maxOccurs="unbounded"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
 </xsd:schema>
