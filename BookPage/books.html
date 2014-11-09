@@ -17,6 +17,10 @@
             return buffer;
         }
 
+        function computeStat(table) {
+
+        }
+
         $(document).ready(function () {
 
             $.ajax({
@@ -103,6 +107,31 @@
     </tbody>
 </table>
 
+<h1>Statistics</h1>
+<table id="statTable">
+    <tr>
+        <td>Total cost of all the books</td>
+        <td id="stat1"></td>
+    </tr>
+    <tr>
+        <td>Total cost of all the books written by an author</td>
+        <td id="stat2"></td>
+    </tr>
+    <tr>
+        <td>Name and book titles of all authors that have a MS or PHD</td>
+        <td id="stat3"></td>
+    </tr>
+    <tr>
+        <td>Book title, author name(s), and publisher name of all the books that
+            cost less than $50</td>
+        <td id="stat4"></td>
+    </tr>
+    <tr>
+        <td>Book title, author name(s), and publisher name of all the books that
+            were published after 2001</td>
+        <td id="stat5"></td>
+    </tr>
+</table>
 
 </body>
 </html>
