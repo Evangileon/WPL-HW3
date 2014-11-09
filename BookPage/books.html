@@ -5,6 +5,53 @@
     <link rel="stylesheet" type="text/css" href="styles/book.css">
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 
+    <script type="text/javascript">
+        function readTagContentRecursively(tag, buffer) {
+            $(tag).children().each(function () {
+                if($(this).children().length > 0) {
+                    buffer = readTagContentRecursively(this, buffer);
+                } else {
+                    buffer += "<td>" + $(this).text() + "</td>";
+                }
+            });
+            return buffer;
+        }
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "xml/books.xml",
+                dataType: "xml",
+                success: function(xml) {
+                    $(xml).find("Book").each(function (a) {
+                        var buffer = "<tr>";
+                        buffer = readTagContentRecursively(this, buffer);
+                        buffer += "</tr>";
+                        $("#tableBody").append(buffer);
+                        var lastRow = $("#tableBody:last-child");
+
+                        if($(this).find("AptNumber").length == 0) {
+
+                            $(lastRow).find(":nth-child(5)").after($("<td>"));
+                        }
+                        if($(this).find("CoAuthorName").length == 0) {
+
+                            $(lastRow).find(":nth-child(11)").after($("<td>"));
+                        }
+                        if($(this).find("SuiteNumber").length == 0) {
+
+                            $(lastRow).find(":nth-child(17)").after($("<td>"));
+                        }
+                    });
+                },
+                error: function(xhr, status) {
+                    alert("Load XML file error");
+                }
+            });
+        });
+    </script>
+
     <title>Selected Books From Jun Yu</title>
 </head>
 <body>
@@ -52,6 +99,8 @@
         <th>Country</th>
     </tr>
     </thead>
+    <tbody id="tableBody">
+    </tbody>
 </table>
 
 

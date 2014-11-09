@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="books.xsd">
+    <Book>
+        <AuthorInformation>
+            <AuthorName>
+                <LastName>Meyer</LastName>
+                <FirstName>Stephenie</FirstName>
+            </AuthorName>
+            <AuthorDateOfBirth>1973-12-24</AuthorDateOfBirth>
+            <AuthorHighestEducation>BS</AuthorHighestEducation>
+            <AuthorAddress>
+                <StreetName>814 Cave Creek Rd</StreetName>
+                <City>Cave Creek</City>
+                <ZipCode>75331</ZipCode>
+                <Country>USA</Country>
+            </AuthorAddress>
+            <NumberAuthorPreviousBooks>1</NumberAuthorPreviousBooks>
+        </AuthorInformation>
+        <BookInformation>
+            <Title>New Moon</Title>
+            <ISBN>031-602-4961</ISBN>
+            <Price currency="dollar">9.59</Price>
+            <PublicationDate>2008-05-31</PublicationDate>
+            <PublisherInformation>
+                <PublisherName>Little Brown And Company</PublisherName>
+                <PublisherAddress>
+                    <StreetName>3 Center Plz</StreetName>
+                    <City>Boston</City>
+                    <ZipCode>02108</ZipCode>
+                    <Country>USA</Country>
+                </PublisherAddress>
+            </PublisherInformation>
+            <TotalTimeInCirculation>5 11 12</TotalTimeInCirculation>
+        </BookInformation>
+    </Book>
+    
+    <Book>
+        <AuthorInformation>
+            <AuthorName>
+                <LastName>Roth</LastName>
+                <FirstName>Veronica</FirstName>
+            </AuthorName>
+            <AuthorDateOfBirth>1988-08-19</AuthorDateOfBirth>
+            <AuthorHighestEducation>BS</AuthorHighestEducation>
+            <AuthorAddress>
+                <StreetName>110 West 40th Street</StreetName>
+                <AptNumber>410</AptNumber>
+                <City>New York</City>
+                <ZipCode>10018</ZipCode>
+                <Country>USA</Country>
+            </AuthorAddress>
+            <NumberAuthorPreviousBooks>1</NumberAuthorPreviousBooks>
+        </AuthorInformation>
+        <BookInformation>
+            <Title>Insurgent: Divergent Series</Title>
+            <ISBN>006-202-4043</ISBN>
+            <Price currency="dollar">9.83</Price>
+            <PublicationDate>2012-05-01</PublicationDate>
+            <PublisherInformation>
+                <PublisherName>Katherine Tegen Books</PublisherName>
+                <PublisherAddress>
+                    <StreetName>1350 Avenue of the Americas</StreetName>
+                    <City>New York</City>
+                    <ZipCode>10019</ZipCode>
+                    <Country>USA</Country>
+                </PublisherAddress>
+            </PublisherInformation>
+            <TotalTimeInCirculation>4 5 7</TotalTimeInCirculation>
+        </BookInformation>
+    </Book>
+    
+    <Book>
+        <AuthorInformation>
+            <AuthorName>
+                <LastName>Piketty</LastName>
+                <FirstName>Thomas</FirstName>
+            </AuthorName>
+            <AuthorDateOfBirth>1971-05-07</AuthorDateOfBirth>
+            <AuthorHighestEducation>PHD</AuthorHighestEducation>
+            <AuthorAddress>
+                <StreetName>48 Boulevard Jourdan</StreetName>
+                <City>Paris</City>
+                <ZipCode>75014</ZipCode>
+                <Country>FRA</Country>
+            </AuthorAddress>
+            <NumberAuthorPreviousBooks>10</NumberAuthorPreviousBooks>
+        </AuthorInformation>
+        <BookInformation>
+            <Title>Capital In The Twenty-First Century</Title>
+            <ISBN>067-443-000X</ISBN>
+            <Price currency="dollar">23.97</Price>
+            <PublicationDate>2014-03-10</PublicationDate>
+            <PublisherInformation>
+                <PublisherName>Belknap Press</PublisherName>
+                <PublisherAddress>
+                    <StreetName>79 Garden Street</StreetName>
+                    <City>Cambridge</City>
+                    <ZipCode>02138</ZipCode>
+                    <Country>USA</Country>
+                </PublisherAddress>
+            </PublisherInformation>
+            <TotalTimeInCirculation>0 5 10</TotalTimeInCirculation>
+        </BookInformation>
+    </Book>
+</Books>
