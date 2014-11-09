@@ -29,7 +29,7 @@
                         buffer = readTagContentRecursively(this, buffer);
                         buffer += "</tr>";
                         $("#tableBody").append(buffer);
-                        var lastRow = $("#tableBody:last-child");
+                        var lastRow = $("#tableBody").find(":last-child");
 
                         if($(this).find("AptNumber").length == 0) {
 
@@ -37,7 +37,7 @@
                         }
                         if($(this).find("CoAuthorName").length == 0) {
 
-                            $(lastRow).find(":nth-child(11)").after($("<td>"));
+                            $(lastRow).find(":nth-child(10)").after($("<td>"));
                         }
                         if($(this).find("SuiteNumber").length == 0) {
 
