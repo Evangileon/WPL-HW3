@@ -8,7 +8,7 @@
                 <FirstName>Stephenie</FirstName>
             </AuthorName>
             <AuthorDateOfBirth>1973-12-24</AuthorDateOfBirth>
-            <AuthorHighestEducation>BS</AuthorHighestEducation>
+            <AuthorHighestEducation>MS</AuthorHighestEducation>
             <AuthorAddress>
                 <StreetName>814 Cave Creek Rd</StreetName>
                 <City>Cave Creek</City>
@@ -42,7 +42,7 @@
                 <FirstName>Veronica</FirstName>
             </AuthorName>
             <AuthorDateOfBirth>1988-08-19</AuthorDateOfBirth>
-            <AuthorHighestEducation>BS</AuthorHighestEducation>
+            <AuthorHighestEducation>MS</AuthorHighestEducation>
             <AuthorAddress>
                 <StreetName>110 West 40th Street</StreetName>
                 <AptNumber>410</AptNumber>
